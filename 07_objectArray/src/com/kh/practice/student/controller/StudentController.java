@@ -31,8 +31,8 @@ public class StudentController {
 	}
 	
 	public double avgScore() {
-		
-		
+		// TODO
+		return 0;
 		
 	}
 	
