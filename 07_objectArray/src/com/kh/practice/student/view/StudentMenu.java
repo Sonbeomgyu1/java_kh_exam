@@ -16,8 +16,8 @@ public class StudentMenu {
 		
 		
 		System.out.println("========== 학생 성적 출력 ==========");
-		System.out.println("학생점수합계:"+i[0]);
-		System.out.println("학생점수평균:"+i[1]);
+//		System.out.println("학생점수합계:"+i[0]);
+//		System.out.println("학생점수평균:"+i[1]);
 		
 		
 		
