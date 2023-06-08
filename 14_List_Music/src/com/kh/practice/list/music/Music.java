@@ -1,15 +1,19 @@
 package com.kh.practice.list.music;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Music {
+public class Music implements Comparable<Object>, Serializable{
+	private static final long serialVersionUID = -231725129446354999L;
+	
 	private String title;
 	private String singer;
-	
-	public Music() {}
-	public Music(String title,String singer) {}
-	
-	//게터세터
+	public Music() {
+	}
+	public Music(String title, String singer) {
+		this.title = title;
+		this.singer = singer;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -22,16 +26,18 @@ public class Music {
 	public void setSinger(String singer) {
 		this.singer = singer;
 	}
-	@Override  //toString 오버라이드
+	@Override
 	public String toString() {
 		return "Music [title=" + title + ", singer=" + singer + "]";
 	}
-	@Override  //hashCode  오버라이드
+	@Override
 	public int hashCode() {
+		//TODO
 		return Objects.hash(singer, title);
 	}
-	@Override  //equals 오버라이드
+	@Override
 	public boolean equals(Object obj) {
+		//TODO
 		if (this == obj)
 			return true;
 		if (obj == null)
@@ -41,14 +47,18 @@ public class Music {
 		Music other = (Music) obj;
 		return Objects.equals(singer, other.singer) && Objects.equals(title, other.title);
 	}
-	
+	@Override
 	public int compareTo(Object o) {
-		int result = 0;
-		return result;
-	}
-	
+		int result = this.singer.compareTo(((Music)o).getSinger());
+		// 양수, 음수
+		System.out.println("compareTo 정렬확인: "+result+" - "+((Music)o).getSinger());
+		return result*-1;
 	}
 
 	
 	
-
+	
+	
+	
+	
+}
