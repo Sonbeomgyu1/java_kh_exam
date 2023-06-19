@@ -28,11 +28,14 @@ public class StudentController {
 		for( int i = 0 ; i <5; i++)
 			sumScore+=sArr[i].getScore();
 		return sumScore;
+		
 	}
 	
-	public double avgScore() {
-		// TODO
-		return 0;
+	public double[] avgScore() {
+		double[] A = new double[2];
+		A[0]= sumScore();
+		A[1]= sumScore()/5.0;
+		return A;
 		
 	}
 	

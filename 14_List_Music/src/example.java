@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.nio.file.Files;
@@ -38,6 +39,7 @@ public class example {
 		// try = 예외가 발생할 가능성이 있는 코드를 넣어서 에러를 감지하고
 		// catch 발생한 에러를 예외처리를 하고
 		// finally는 에러가 발생하거나 안하거나 반드시 실행해야하는 부분입니다.
+		//
 
 		int num1 = 10, num2 = 0;
 		double result;
@@ -88,7 +90,17 @@ public class example {
 	}
 	
 	//-------------------------------------------------
-
+	public void fileSave(String fileName) {
+		try(ObjectOutputStream objOut = new ObjectOutputStream(new FileOutputStream(fileName));)
+		{
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	//---------------------------------------------
+	
 	
 	}
 	
